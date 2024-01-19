@@ -2,13 +2,11 @@ import { getResp, getRestPath } from "../utils/utils";
 
 class FileService {
 
-    dispatch(method: string, resource: string) {
+    dispatch(method: string, resource: string, args?: { [key: string]: string }) {
         if (method === 'GET') {
-            const rest = getRestPath(resource)
-            console.log(rest)
-            switch (rest) {
+            switch (resource) {
                 case '/getFile':
-                    return this.getFile()
+                    return this.getFile(args ? parseInt(args.Id) : 0)
             }
         } else {
             return getResp(1, 'Only Accept by GET')
@@ -16,9 +14,9 @@ class FileService {
 
     }
 
-    getFile() {
-        console.log('ask for file:')
-        return getResp(0, 'success')
+    getFile(Id: number) {
+        console.log(`ask for file: ${Id}`)
+        return getResp(0, 'success', Id)
     }
 }
 
