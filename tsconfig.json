@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "Node16",
+        "useDefineForClassFields": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "lib": [
+            "ES2020"
+        ],
+        "outDir": "./build",
+        "strict": true
+    },
+    "include": [
+        "src"
+    ]
+}
