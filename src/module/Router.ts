@@ -1,8 +1,6 @@
 import { FileService } from '../services'
 import { Context } from '../type'
 import { getResp, getRestPath, parseUrlArgs } from '../utils/utils'
-import mime from 'mime-types'
-
 const Router = (ctx: Context, next: any) => {
 
     console.log(`request for: ${ctx.url} by ${ctx.method}`)
