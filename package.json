@@ -10,11 +10,13 @@
     "license": "ISC",
     "description": "",
     "dependencies": {
+        "@koa/cors": "^5.0.0",
         "koa": "^2.15.0",
         "mime-types": "^2.1.35"
     },
     "devDependencies": {
         "@types/koa": "^2.14.0",
+        "@types/koa__cors": "^5.0.0",
         "@types/mime-types": "^2.1.4",
         "typescript": "^5.3.3"
     }

@@ -1,4 +1,5 @@
 import Koa from 'koa'
+import cors from '@koa/cors'
 import { Router } from './module'
 
 class KLauncher {
@@ -9,6 +10,7 @@ class KLauncher {
 
     private constructor() {
         this.app = new Koa()
+        this.app.use(cors())
         this.app.use(Router)
     }
 
