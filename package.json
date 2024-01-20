@@ -9,10 +9,12 @@
     "license": "ISC",
     "description": "",
     "dependencies": {
-        "koa": "^2.15.0"
+        "koa": "^2.15.0",
+        "mime-types": "^2.1.35"
     },
     "devDependencies": {
         "@types/koa": "^2.14.0",
+        "@types/mime-types": "^2.1.4",
         "typescript": "^5.3.3"
     }
 }

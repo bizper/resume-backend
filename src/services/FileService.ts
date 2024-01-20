@@ -1,4 +1,5 @@
-import { getResp, getRestPath } from "../utils/utils";
+import { getResp } from "../utils/utils";
+import fs from 'fs'
 
 class FileService {
 
@@ -6,7 +7,7 @@ class FileService {
         if (method === 'GET') {
             switch (resource) {
                 case '/getFile':
-                    return this.getFile(args ? parseInt(args.Id) : 0)
+                    return this.getFile(args)
             }
         } else {
             return getResp(1, 'Only Accept by GET')
@@ -14,9 +15,15 @@ class FileService {
 
     }
 
-    getFile(Id: number) {
-        console.log(`ask for file: ${Id}`)
-        return getResp(0, 'success', Id)
+    getFile(args?: { [key: string]: string }) {
+        if(args && args.Id) {
+            console.log(`ask for file: ${args.Id}`)
+            const filepath = `~/pics/${args.Id}`
+            const file = fs.readFileSync(filepath)
+            return file
+        } else {
+            return getResp(1, 'No Args Id')
+        }
     }
 }
 

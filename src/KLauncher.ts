@@ -3,6 +3,8 @@ import { Router } from './module'
 
 class KLauncher {
 
+    private port = 8090
+
     private static instance?: KLauncher = undefined
 
     private constructor() {
@@ -20,8 +22,8 @@ class KLauncher {
     private app: Koa
 
     launch() {
-        this.app.listen(8090)
-        console.log('server running on 8080 successfully!')
+        this.app.listen(this.port)
+        console.log(`server running on ${this.port} successfully!`)
     }
 
 }
