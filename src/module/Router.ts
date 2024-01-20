@@ -4,6 +4,7 @@ import { getResp, getRestPath, parseUrlArgs } from '../utils/utils'
 const Router = (ctx: Context, next: any) => {
 
     console.log(`request for: ${ctx.url} by ${ctx.method}`)
+    ctx.response.header['Access-Control-Allow-Origin'] = '*'
     ctx.response.header['x-content-type-options'] = 'application/json'
 
     const url = ctx.url.split('/')[1]
