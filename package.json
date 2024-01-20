@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "index.ts",
     "scripts": {
+        "build": "tsc",
         "dev": "tsc && node ./build/index.js"
     },
     "author": "",
