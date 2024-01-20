@@ -19,8 +19,8 @@ class FileService {
         if(args && args.Id) {
             console.log(`ask for file: ${decodeURI(args.Id)}`)
             const filepath = `/root/pics/${args.Id}`
-            if(fs.existsSync(filepath)) {
-                return getResp(1, `file: ~/pics/${filepath} not exists.`)
+            if(!fs.existsSync(filepath)) {
+                return getResp(1, `file: /root/pics/${filepath} not exists.`)
             }
             const file = fs.readFileSync(filepath)
             return file
