@@ -1,4 +1,4 @@
-import { FileService } from '../services'
+import { FileService, PhotoService } from '../services'
 import { Context } from '../type'
 import { getResp, getRestPath, parseUrlArgs } from '../utils/utils'
 const Router = (ctx: Context, next: any) => {
@@ -9,10 +9,16 @@ const Router = (ctx: Context, next: any) => {
     const url = ctx.url.split('/')[1]
 
     console.log(url)
+
+    let result
     
     switch(url) {
+        case 'albums':
+            result = PhotoService.getAllPhotos()
+            ctx.body = result
+            return
         case 'other':
-            const result = FileService.dispatch(ctx.method, getRestPath(ctx.url.trim()), parseUrlArgs(ctx.url.trim()))
+            result = FileService.dispatch(ctx.method, getRestPath(ctx.url.trim()), parseUrlArgs(ctx.url.trim()))
             if(result instanceof Buffer) {
                 ctx.response.header['x-content-type-options'] = 'image/jpeg'
                 
