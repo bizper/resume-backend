@@ -4,7 +4,7 @@ class PhotoService {
 
     getAllPhotos() {
         return getResp(0, 'success', [
-            {cover: 'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-1.jpg', desc: '', spec: '', series: [
+            {cover: 'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-1.jpg', desc: 'Brandon Memory', spec: '', series: [
                 'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-1.jpg',
                 'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-2.jpg',
                 'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-3.jpg',
