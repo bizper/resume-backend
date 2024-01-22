@@ -20,7 +20,8 @@ class PhotoService {
                 'https://i.ibb.co/sb7yzpj/Orange-Photo-Works-13.jpg',
                 'https://i.ibb.co/qD3FpnG/Orange-Photo-Works-14.jpg',
                 'https://i.ibb.co/mtyr3nX/Orange-Photo-Works-15.jpg'
-            ]}
+            ]},
+            {cover: 'https://i.ibb.co/sjBDCkk/6.jpg', desc: 'Jiuzhai Valley', spec: ''}
         ])
     }
 
