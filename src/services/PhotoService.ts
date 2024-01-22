@@ -4,26 +4,28 @@ class PhotoService {
 
     getAllPhotos() {
         return getResp(0, 'success', [
-            {cover: 'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-1.jpg', desc: 'Brandon Memory', spec: '', series: [
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-1.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-2.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-3.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-4.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-5.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-6.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-7.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-8.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-9.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-10.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-11.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-12.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-13.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-14.jpg',
-                'http://45.77.179.191:8090/other/getFile?Id=brandon/OrangePhotoWorks-15.jpg'
+            {cover: 'https://i.ibb.co/vhDdvpz/Orange-Photo-Works-1.jpg', desc: 'Brandon Memory', spec: '', series: [
+                'https://i.ibb.co/vhDdvpz/Orange-Photo-Works-1.jpg',
+                'https://i.ibb.co/HPvr1xF/Orange-Photo-Works-2.jpg',
+                'https://i.ibb.co/NrMPHbd/Orange-Photo-Works-3.jpg',
+                'https://i.ibb.co/N3BtkKk/Orange-Photo-Works-4.jpg',
+                'https://i.ibb.co/2kD5PBf/Orange-Photo-Works-5.jpg',
+                'https://i.ibb.co/YykpJt4/Orange-Photo-Works-6.jpg',
+                'https://i.ibb.co/S7LDWYL/Orange-Photo-Works-7.jpg',
+                'https://i.ibb.co/9ydRVYZ/Orange-Photo-Works-8.jpg',
+                'https://i.ibb.co/16pnd7P/Orange-Photo-Works-9.jpg',
+                'https://i.ibb.co/BGKsx03/Orange-Photo-Works-10.jpg',
+                'https://i.ibb.co/TrPDmCk/Orange-Photo-Works-11.jpg',
+                'https://i.ibb.co/DtCz7f8/Orange-Photo-Works-12.jpg',
+                'https://i.ibb.co/sb7yzpj/Orange-Photo-Works-13.jpg',
+                'https://i.ibb.co/qD3FpnG/Orange-Photo-Works-14.jpg',
+                'https://i.ibb.co/mtyr3nX/Orange-Photo-Works-15.jpg'
             ]}
         ])
     }
 
 }
+
+
 
 export default new PhotoService()

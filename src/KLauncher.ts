@@ -11,7 +11,7 @@ class KLauncher {
     private constructor() {
         this.app = new Koa()
         this.app.use(cors())
-        this.app.use(Router)
+        this.app.use(Router.routes()).use(Router.allowedMethods())
     }
 
     static getInstance(): KLauncher {

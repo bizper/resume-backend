@@ -1,35 +1,14 @@
-import { FileService, PhotoService } from '../services'
-import { Context } from '../type'
-import { getResp, getRestPath, parseUrlArgs } from '../utils/utils'
-const Router = (ctx: Context, next: any) => {
+import router from 'koa-router'
+import { PhotoService } from '../services'
 
-    console.log(`request for: ${ctx.url} by ${ctx.method}`)
-    ctx.response.header['x-content-type-options'] = 'application/json'
+const albums = new router()
 
-    const url = ctx.url.split('/')[1]
+albums.get('/getAll', async (ctx) => {
+    ctx.response.header['Content-Type'] = 'application/json'
+    ctx.body = PhotoService.getAllPhotos()
+})
 
-    console.log(url)
+const main = new router()
+main.use('/albums', albums.routes(), albums.allowedMethods())
 
-    let result
-    
-    switch(url) {
-        case 'albums':
-            result = PhotoService.getAllPhotos()
-            ctx.body = result
-            return
-        case 'other':
-            result = FileService.dispatch(ctx.method, getRestPath(ctx.url.trim()), parseUrlArgs(ctx.url.trim()))
-            if(result instanceof Buffer) {
-                ctx.response.header['x-content-type-options'] = 'image/jpeg'
-                
-            }
-            ctx.body = result
-            return
-        default:
-            ctx.body = getResp(1, 'Not Found Resources')
-            return
-    }
-
-}
-
-export default Router
+export default main
