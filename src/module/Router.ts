@@ -5,7 +5,7 @@ const albums = new router()
 
 albums.get('/getAll', async (ctx) => {
     ctx.response.header['Content-Type'] = 'application/json'
-    ctx.body = PhotoService.getAllPhotos()
+    ctx.body = await PhotoService.getAllPhotos()
 })
 
 const main = new router()
