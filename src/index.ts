@@ -1,3 +1,3 @@
-import { getLauncher } from './KLauncher'
+import launcher from './KLauncher'
 
-getLauncher().launch()
+launcher.launch()

@@ -34,4 +34,4 @@ function getLauncher() {
     return KLauncher.getInstance()
 }
 
-export { KLauncher, getLauncher }
+export default getLauncher()
