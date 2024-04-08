@@ -1,3 +1,4 @@
 import PhotoService from './PhotoService'
+import RecordService from './RecordService'
 
-export { PhotoService }
+export { PhotoService, RecordService }
