@@ -1,6 +1,7 @@
 import Koa from 'koa'
 import cors from '@koa/cors'
 import { Router } from './module'
+import bodyparser from 'koa-bodyparser'
 
 class KLauncher {
 
@@ -11,6 +12,7 @@ class KLauncher {
     private constructor() {
         this.app = new Koa()
         this.app.use(cors())
+        this.app.use(bodyparser())
         this.app.use(Router.routes()).use(Router.allowedMethods())
     }
 

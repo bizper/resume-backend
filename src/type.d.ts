@@ -3,3 +3,8 @@ export declare interface RespBody {
     msg?: string
     obj?: any
 }
+
+export declare interface User {
+    username: string
+    password: string
+}
