@@ -8,3 +8,10 @@ export declare interface User {
     username: string
     password: string
 }
+
+export declare interface Record {
+    title: string
+    text: string
+    date: Date
+    tag: string
+}

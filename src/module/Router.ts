@@ -1,6 +1,7 @@
 import router from 'koa-router'
 import { PhotoService, RecordService } from '../services'
 import UserService from '../services/UserService'
+import { Record } from '../type'
 
 const albums = new router()
 
@@ -14,6 +15,11 @@ const records = new router()
 records.get('/', async (ctx) => {
     ctx.response.header['Content-Type'] = 'application/json'
     ctx.body = await RecordService.getAllRecords()
+})
+
+records.post('/new', async (ctx) => {
+    ctx.response.header['Content-Type'] = 'application/json'
+    ctx.body = await RecordService.newRecord(ctx.request.body as Record)
 })
 
 const main = new router()
