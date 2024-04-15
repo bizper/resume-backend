@@ -1,13 +1,46 @@
 import { DB } from "../module"
 import { getResp } from "../utils/utils"
-import { Record } from "../type"
+import { QueryParam, Record } from "../type"
+import { Filter, FindOptions } from "mongodb"
 
 class RecordService {
 
-    async getAllRecords() {
-        const result = await DB.collection('records').find({}).toArray()
+    async getAllRecords(params?: QueryParam) {
+        let result
+        if(params) {
+            const options: FindOptions = {
+                limit: params.limit,
+                sort: params.sort
+            }
+            const query: Filter<Record> = {}
+            if(params.filters) {
+                for(let key in params.filters) {
+                    const item = params.filters[key]
+                    switch(item.operation) {
+                        case "eq":
+                            query[key] = {
+                                $eq: item.value
+                            }
+                            break;
+                        case "gt":
+                            query[key] = {
+                                $gt: item.value
+                            }
+                            break;
+                        case "lt":
+                            query[key] = {
+                                $lt: item.value
+                            }
+                            break;
+                    }
+                }
+            }
+            result = await DB.collection<Record>('records').find(query, options).toArray()
+        } else {
+            result = await DB.collection<Record>('records').find({}).toArray()
+        }
         return getResp(0, 'success', {
-            lastUpdate: '2024.04.01',
+            lastUpdate: result[0].date,
             list: result
         })
     }

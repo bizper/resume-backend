@@ -15,3 +15,15 @@ export declare interface Record {
     date: Date
     tag: string
 }
+
+export declare interface QueryParam {
+    begin?: number
+    page?: number
+    limit?: number
+    filters?: {
+        [key: string]: { operation: 'eq' | 'gt' | 'lt' , value: string }
+    }
+    sort?: {
+        [key: string]: 'asc' | 'desc'
+    }
+}
