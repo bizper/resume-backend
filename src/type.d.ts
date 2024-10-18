@@ -16,14 +16,23 @@ export declare interface Record {
     tag: string
 }
 
+export type Operation = 'eq' | 'gt' | 'lt'
+
+export type Sort = 'asc' | 'desc'
+
 export declare interface QueryParam {
     begin?: number
     page?: number
     limit?: number
     filters?: {
-        [key: string]: { operation: 'eq' | 'gt' | 'lt' , value: string }
+        [key: string]: { operation: Operation , value: string }
     }
     sort?: {
-        [key: string]: 'asc' | 'desc'
+        [key: string]: Sort
     }
+}
+
+export declare interface RequestFileParam {
+    filename: string
+    path?: string
 }

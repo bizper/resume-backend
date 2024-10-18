@@ -1,7 +1,16 @@
 import router from 'koa-router'
-import { PhotoService, RecordService } from '../services'
+import { MusicService, PhotoService, RecordService } from '../services'
 import UserService from '../services/UserService'
-import { QueryParam, Record } from '../type'
+import { QueryParam, Record, RequestFileParam } from '../type'
+
+const files = new router()
+
+files.get('/play', async (ctx) => {
+    ctx.response.header['Content-Type'] = 'audio/mpeg'
+    const filename = `${ctx.query.filename}`
+    const stream = await MusicService.getMusic(filename)
+    ctx.body = stream
+})
 
 const albums = new router()
 
@@ -25,6 +34,7 @@ records.post('/new', async (ctx) => {
 const main = new router()
 main.use('/albums', albums.routes(), albums.allowedMethods())
 main.use('/records', records.routes(), records.allowedMethods())
+main.use('/file', files.routes(), files.allowedMethods())
 main.post('/login', async (ctx) => {
     ctx.response.header['Content-Type'] = 'application/json'
     const { username, password } = ctx.request.body as any
